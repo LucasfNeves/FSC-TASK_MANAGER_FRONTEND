@@ -1,9 +1,11 @@
+import styles from './styles.module.css'
+
 const TaskItem = ({ task }) => {
     return (
-        <>
-            <h1>{task.description}</h1>
+        <p>
+            <span className={''}>{task.description}</span>
             <p>{task.isCompleted ? 'Completa' : 'Não Completa'} </p>
-        </>
+        </p>
     )
 }
 

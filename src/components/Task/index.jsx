@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 import styles from "./style.module.css";
+import { TaskItem } from "../TaskItem";
 
 const Tasks = () => {
     const [tasks, setTasks] = useState([]);
@@ -29,7 +30,7 @@ const Tasks = () => {
                 <h3>Últimas Tarefas</h3>
                 <div className={styles.tasksList}>
                    {tasks.filter(task => task.isCompleted === false).map(task => {
-                    return <p>{task.description}</p>
+                    return <TaskItem task={task} />
                    })}
                 </div>
             </div>
@@ -38,7 +39,7 @@ const Tasks = () => {
                 <h3> Tarefas Concluídas</h3>
                 <div className={styles.tasksList}>
                     {tasks.filter( task => task.isCompleted === true).map(task => {
-                        return <p>{task.description}</p>
+                        return <TaskItem task={task} />
                     })}
                 </div>
             </div>
