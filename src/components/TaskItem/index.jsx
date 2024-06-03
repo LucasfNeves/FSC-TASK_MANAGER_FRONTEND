@@ -1,12 +1,34 @@
-import styles from './styles.module.css'
+import { Trash } from "phosphor-react";
+import styles from "./styles.module.css";
 
 const TaskItem = ({ task }) => {
     return (
-        <p>
-            <span className={''}>{task.description}</span>
-            <p>{task.isCompleted ? 'Completa' : 'Não Completa'} </p>
-        </p>
-    )
-}
+        <div className={styles.taskItemContainer}>
+            <div className={styles.taskDescription}>
+                <label
+                    className={
+                        task.isCompleted
+                            ? "checkboxContainerCompleted"
+                            : "checkboxContainer"
+                    }
+                >
+                    <input type="checkbox" defaultChecked={task.isCompleted} />
+                    {task.description}
+                    <span
+                        className={
+                            task.isCompleted
+                                ? "checkmark completed"
+                                : "checkmark"
+                        }
+                    ></span>
+                </label>
+            </div>
 
-export {TaskItem}
+            <div className={styles.delete}>
+                <Trash size={18} color="#F97474" weight='bold' />
+            </div>
+        </div>
+    );
+};
+
+export { TaskItem };
