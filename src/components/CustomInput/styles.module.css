@@ -1,0 +1,51 @@
+:root {
+    --sub-color: #666;
+    --main-color: #00ffa3;
+}
+
+.customInputContainer {
+    position: relative;
+    max-width: 50%;
+    margin-top: 2rem;
+}
+
+.customInputContainer .customInput {
+    background: none;
+    color: var(--sub-color);
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--sub-color);
+    transition: all 0.5s ease;
+}
+
+.customInputContainer .customInput:focus {
+    outline: none;
+    border-bottom: 1px solid var(--main-color);
+}
+
+.customInputContainer .customInput:focus ~ .customInputLabel {
+    top: -14px;
+    font-size: 12px;
+    color: var(--main-color);
+}
+
+.customInputContainer .customInputLabel {
+    color: var(--sub-color);
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 300ms ease all;
+}
+
+.customInputContainer .customInputLabel.shrink {
+    top: -14px;
+    font-size: 12px;
+    color: var(--main-color);
+}

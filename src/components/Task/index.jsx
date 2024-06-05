@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import styles from "./style.module.css";
 import { TaskItem } from "../TaskItem";
+import { AddTask } from "../AddTask";
 
 const Tasks = () => {
     const [tasks, setTasks] = useState([]);
@@ -28,6 +29,7 @@ const Tasks = () => {
 
             <div className={styles.lastTasks}>
                 <h3>Últimas Tarefas</h3>
+                <AddTask />
                 <div className={styles.tasksList}>
                    {tasks.filter(task => task.isCompleted === false).map(task => {
                     return <TaskItem task={task} />

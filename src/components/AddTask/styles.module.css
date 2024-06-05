@@ -1,0 +1,12 @@
+.addTaskContainer {
+    display: flex;
+    align-items: center;
+}
+
+.addTaskContainer div:first-child {
+    width: 100%;
+}
+
+.custom-button-container {
+    margin-left: 16px;
+}
