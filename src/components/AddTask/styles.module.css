@@ -1,6 +1,7 @@
 .addTaskContainer {
     display: flex;
-    align-items: center;
+    align-items: end;
+    gap: 2rem;
 }
 
 .addTaskContainer div:first-child {

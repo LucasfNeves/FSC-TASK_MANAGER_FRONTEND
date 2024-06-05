@@ -31,18 +31,22 @@ const Tasks = () => {
                 <h3>Últimas Tarefas</h3>
                 <AddTask />
                 <div className={styles.tasksList}>
-                   {tasks.filter(task => task.isCompleted === false).map(task => {
-                    return <TaskItem task={task} />
-                   })}
+                    {tasks
+                        .filter((task) => task.isCompleted === false)
+                        .map((task) => {
+                            return <TaskItem task={task} />;
+                        })}
                 </div>
             </div>
 
             <div className={styles.completedTasks}>
                 <h3> Tarefas Concluídas</h3>
                 <div className={styles.tasksList}>
-                    {tasks.filter( task => task.isCompleted === true).map(task => {
-                        return <TaskItem task={task} />
-                    })}
+                    {tasks
+                        .filter((task) => task.isCompleted === true)
+                        .map((task) => {
+                            return <TaskItem task={task} />;
+                        })}
                 </div>
             </div>
         </div>

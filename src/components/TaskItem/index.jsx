@@ -25,7 +25,7 @@ const TaskItem = ({ task }) => {
             </div>
 
             <div className={styles.delete}>
-                <Trash size={18} color="#F97474" weight='bold' />
+                <Trash size={18} color="#F97474" weight="bold" />
             </div>
         </div>
     );
