@@ -27,7 +27,7 @@ const AddTask = ({fetchTasks}) => {
 
             setTask('')
 
-        } catch(error) {
+        } catch(_error) {
             
         }
     }

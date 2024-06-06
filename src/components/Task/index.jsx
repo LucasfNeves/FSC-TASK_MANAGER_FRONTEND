@@ -14,8 +14,8 @@ const Tasks = () => {
                 "https://fsc-task-manager-backend-1.onrender.com/tasks"
             );
             setTasks(data);
-        } catch (error) {
-            console.log(error);
+        } catch (_error) {
+         
         }
     };
 

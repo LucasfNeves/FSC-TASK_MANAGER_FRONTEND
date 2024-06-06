@@ -11,8 +11,8 @@ const TaskItem = ({ task, fetchTasks }) => {
             );
 
             toast.success("Tarefa deletada com sucesso");
-        } catch (error) {
-            console.log(error.message);
+        } catch (_error) {
+          
             toast.error("Erro ao deletar a tarefa");
         }
 
@@ -33,9 +33,8 @@ const TaskItem = ({ task, fetchTasks }) => {
             }
 
             await fetchTasks();
-        } catch (error) {
-            console.log("Error:", error.message);
-            console.log("Error details:", error);
+        } catch (_error) {
+            
         }
     };
 
