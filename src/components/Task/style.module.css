@@ -7,6 +7,19 @@
     height: 100vh;
 }
 
+@media (max-width: 1024px) {
+    .tasksContainer {
+        max-width: 60%;
+    }
+}
+
+ @media (max-width: 768px) {
+    .tasksContainer {
+        padding: 30px;
+        max-width: 100%;
+    }
+}
+
 .tasksContainer h2 {
     margin-bottom: 4rem;
 }
@@ -22,7 +35,6 @@
     margin-bottom: 24px;
     overflow-y: hidden;
 }
-    
 
 .completedTasks {
     flex: 1;
@@ -31,11 +43,10 @@
     overflow-y: hidden;
 }
 
-.tasksList{
+.tasksList {
     margin-top: 28px;
     overflow-y: auto;
 }
-
 
 .tasksList div {
     padding: 8px 0px;
@@ -55,11 +66,7 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
     border-radius: 50px;
-    background: linear-gradient(
-        262.71deg,
-        #00d1ff -30.04%,
-        #00ffa3 124.74%
-    );
+    background: linear-gradient(262.71deg, #00d1ff -30.04%, #00ffa3 124.74%);
 }
 
 /* Handle on hover */
