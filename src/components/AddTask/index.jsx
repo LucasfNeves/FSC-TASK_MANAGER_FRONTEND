@@ -16,7 +16,12 @@ const AddTask = () => {
             if(task.length === 0) {
                 return toast.error('A Tarefa precisa de descrição para ser adicionada')
             }
-            const {data} = await axios.post('https://fsc-task-manager-backend-1.onrender.com/tasks')
+            await axios.post('https://fsc-task-manager-backend-1.onrender.com/tasks', {
+                description: task,
+                isCompleted: false
+            })
+
+            toast.success('Tarefa criada com sucesso')
 
         } catch(error) {
             
