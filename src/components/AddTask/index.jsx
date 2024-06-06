@@ -6,7 +6,7 @@ import { Plus } from "phosphor-react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const AddTask = () => {
+const AddTask = ({fetchTasks}) => {
     const [task, setTask] = useState("");
 
     
@@ -22,6 +22,10 @@ const AddTask = () => {
             })
 
             toast.success('Tarefa criada com sucesso')
+
+            await fetchTasks()
+
+            setTask('')
 
         } catch(error) {
             

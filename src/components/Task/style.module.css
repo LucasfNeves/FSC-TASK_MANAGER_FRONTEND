@@ -17,14 +17,13 @@
 
 .lastTasks {
     flex: 1;
-    overflow-y: hidden;
     display: flex;
     flex-direction: column;
+    margin-bottom: 24px;
 }
 
 .completedTasks {
     flex: 1;
-    padding-top: 28px;
 }
 
 .tasksList{

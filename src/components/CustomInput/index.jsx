@@ -7,6 +7,7 @@ const CustomInput = ({ label, value, onChange }) => {
                 type="text"
                 className={styles.customInput}
                 onChange={onChange}
+                value={value}
             />
 
             {label ? (
