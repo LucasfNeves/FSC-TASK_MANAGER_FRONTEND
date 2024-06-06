@@ -33,7 +33,7 @@
 
 .tasksList{
     margin-top: 28px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 

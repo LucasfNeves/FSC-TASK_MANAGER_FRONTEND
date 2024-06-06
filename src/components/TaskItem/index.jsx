@@ -3,12 +3,15 @@ import styles from "./styles.module.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const TaskItem = ({ task }) => {
+const TaskItem = ({ task, fetchTasks }) => {
     const handleDeleteTask = async (id) => {
         try {
             await axios.delete(
                 `https://fsc-task-manager-backend-1.onrender.com/tasks/${id}`
             );
+            
+            fetchTasks();
+
             toast.success("Tarefa deletada com sucesso");
         } catch (error) {
             console.log(error.message);
