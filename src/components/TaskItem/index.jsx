@@ -9,13 +9,33 @@ const TaskItem = ({ task, fetchTasks }) => {
             await axios.delete(
                 `https://fsc-task-manager-backend-1.onrender.com/tasks/${id}`
             );
-            
-            fetchTasks();
 
             toast.success("Tarefa deletada com sucesso");
         } catch (error) {
             console.log(error.message);
             toast.error("Erro ao deletar a tarefa");
+        }
+
+        fetchTasks();
+    };
+
+    const handleCheckbox = async (task, id) => {
+        try {
+            const response = await axios.patch(
+                `https://fsc-task-manager-backend-1.onrender.com/tasks/${id}`,
+                {
+                    isCompleted: !task.isCompleted,
+                }
+            );
+
+            if (response.status === 200) {
+                toast.success("Tarefa modificada com sucesso");
+            }
+
+            await fetchTasks();
+        } catch (error) {
+            console.log("Error:", error.message);
+            console.log("Error details:", error);
         }
     };
 
@@ -30,7 +50,11 @@ const TaskItem = ({ task, fetchTasks }) => {
                     }
                 >
                     {task.description}
-                    <input type="checkbox" defaultChecked={task.isCompleted} />
+                    <input
+                        type="checkbox"
+                        defaultChecked={task.isCompleted}
+                        onClick={() => handleCheckbox(task, task._id)}
+                    />
                     <span
                         className={
                             task.isCompleted
