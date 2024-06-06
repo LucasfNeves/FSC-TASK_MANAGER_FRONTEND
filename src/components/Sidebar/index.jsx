@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import logo from "../../assets/images";
+import logo from "../../assets/images/1111.png";
 import {CustomButton} from '../CustomButton/index'
 
 const Sidebar = () => {
@@ -9,7 +9,9 @@ const Sidebar = () => {
                 <img src={logo} alt="Full Stack Club" />
             </div>
             <div className={styles.signOut}>
-                <CustomButton />
+                <CustomButton>
+                    Sair    
+                </CustomButton>
             </div>
         </div>
     );
