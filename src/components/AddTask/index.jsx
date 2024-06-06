@@ -38,6 +38,7 @@ const AddTask = ({fetchTasks}) => {
                 label={"Adicionar tarefa..."}
                 value={task}
                 onChange={(e) => setTask(e.target.value)}
+                onEnterPress={handleTaskAddtion}
             />
             <CustomButton onClick={handleTaskAddtion}>
                 <Plus size={14} color="#fff" weight="bold"/>

@@ -1,6 +1,13 @@
 import styles from "./styles.module.css";
 
-const CustomInput = ({ label, value, onChange }) => {
+const CustomInput = ({ label, value, onChange, onEnterPress }) => {
+
+    const handleKeyDown = (e) => {
+        if(e.key === 'Enter'){
+            onEnterPress();
+        }
+    }
+
     return (
         <div className={styles.customInputContainer}>
             <input
@@ -8,6 +15,7 @@ const CustomInput = ({ label, value, onChange }) => {
                 className={styles.customInput}
                 onChange={onChange}
                 value={value}
+                onKeyDown={(e) => handleKeyDown(e)}
             />
 
             {label ? (
