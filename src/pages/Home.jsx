@@ -1,4 +1,4 @@
-import { Sidebar } from "phosphor-react";
+import { Sidebar } from "../components/Sidebar";
 import { Tasks } from "../components/Task";
 
 import styles from "./Home.module.css";
