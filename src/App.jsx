@@ -5,14 +5,14 @@ import "react-toastify/dist/ReactToastify.css";
 import { Sidebar } from "./components/Sidebar";
 
 import './App.css'
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./pages/Home";
 
 const App = () => {
     return (
-        <div className='app-container'>
-            <Sidebar />
-            <Tasks />
-            <ToastContainer />
-        </div>
+       <Routes>
+            <Route path="/" element={<Home />} />
+       </Routes>
     );
 };
 

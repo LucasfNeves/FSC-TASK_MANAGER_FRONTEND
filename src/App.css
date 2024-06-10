@@ -1,12 +1,2 @@
-.app-container{
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-}
 
-@media (max-width: 1024px) {
-  .app-container{
-    display: flex;
-    align-items: center;
-  }
-}
 
