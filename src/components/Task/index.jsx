@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 
 import styles from "./style.module.css";
 import { TaskItem } from "../TaskItem";
@@ -8,14 +8,14 @@ import { AddTask } from "../AddTask";
 const Tasks = () => {
     const [tasks, setTasks] = useState([]);
 
-    const fetchTasks = async () => {
+    const fetchTasks = useCallback( async() => {
         try {
             const { data } = await axios.get(
                 "https://fsc-task-manager-backend-1.onrender.com/tasks"
             );
             setTasks(data);
         } catch (_error) {}
-    };
+    }, [])
 
     const LastTasks = useMemo(() => {
         return tasks.filter((task) => task.isCompleted === false);
@@ -23,7 +23,7 @@ const Tasks = () => {
 
     useEffect(() => {
         fetchTasks();
-    }, []);
+    }, [fetchTasks]);
 
     return (
         <div className={styles.tasksContainer}>
